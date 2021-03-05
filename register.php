@@ -9,7 +9,7 @@
         if (empty(trim($_POST['username']))) {
             $usernameErr = 'Please enter a username';
         } elseif (strlen(trim($_POST['username'])) > 10) {
-            $usernameErr = 'Username must only have at most 10 characters';
+            $usernameErr = 'Username must only have 10 characters';
         } else {
             $sql = 'SELECT * FROM users WHERE username = ?';
             $statement = mysqli_prepare($link, $sql);
@@ -40,7 +40,7 @@
         }
 
         if (empty(trim($_POST['confirm_password']))) {
-            $confirmPasswordErr = 'Please enter a confirm password';
+            $confirmPasswordErr = 'Please enter to confirm password';
         } else {
             $confirmPassword = trim($_POST['confirm_password']);
             if (empty($passwordErr) && ($password != $confirmPassword)) {
