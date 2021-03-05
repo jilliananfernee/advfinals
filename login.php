@@ -22,14 +22,14 @@
         if (empty(trim($_POST['username']))) {
             $usernameErr = 'Please enter username';
         } else {
-            $username = trim($_POST['username']);
+            $username = trim(htmlspecialchars($_POST['username']));
         }
 
         // Check if password is empty
         if (empty(trim($_POST['password']))) {
             $passwordErr = 'Please enter your password';
         } else {
-            $password = trim($_POST['password']);
+            $password = trim(htmlspecialchars($_POST['password']));
         }
 
         // Validate credentials
@@ -120,7 +120,7 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Login">
                 </div>
-                <p>Don't have an account? <a href="login.php">Register</a></p>
+                <p>Don't have an account? <a href="register.php">Register</a></p>
             </form>
         </div>
     </body>
